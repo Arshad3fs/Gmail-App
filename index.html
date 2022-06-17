@@ -24,24 +24,47 @@
 
     </section>
     <section id="content">
-        <div id="tabs">
-
+        <div id="tabs" class="tabs">
+            <div id="primary" class="tab">                
+                <i class="fa fa-file-text-o tab-icon" aria-hidden="true"></i>
+                <label> Primary </label>
+            </div>
+            <div id="social" class="tab">
+                <i class="fa fa-users tab-icon" aria-hidden="true"></i>
+                <label> Social </label>
+            </div>
+            <div id="promotions" class="tab">
+                <i class="fa fa-tag tab-icon" aria-hidden="true"></i>
+                <label> Promotions </label>
+            </div>
         </div>
         <table class="emails-table">
             <thead>                
             </thead>
             <tbody>
                 <tr read>
+                    <td>
+                        <input type="checkbox" class="selection selection-checkbox" id="1" />
+                        <i class="fa fa-star-o selection " aria-hidden="true"></i>
+                    </td>
                     <td> Tushar @ Hackerearch </td>
                     <td> Equinix wants Senior Software Developer; 3+ Years </td>
                     <td> 5:06 PM </td>
                 </tr>
                 <tr read>
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
                     <td> Business Insider via </td>
                     <td> Take a hike </td>
                     <td> 5:04 PM </td>
                 </tr>
-                <tr>
+                <tr unread>
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
                     <td> ClearTax </td>
                     <td> Subject line kal likhte hein </td>
                     <td> Jun 15 </td>
