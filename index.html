@@ -9,15 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&family=Work+Sans:wght@100&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-
-
     <script src="js/gmail.js"> </script>
 </head>
 
 <body>
     <header id="header" class="header-container">
         <i class="fa fa-search fa-lg icon search-icon" aria-hidden="true"></i>
-        <input type="text" class="search-bar" id="search-bar" placeholder="Search mail" />
+        <input type="text" class="search-bar" id="search-bar" placeholder="Search mail" onkeyup="filterEmails(event)"/>
         <i class="fa fa-filter fa-lg icon filter-icon" aria-hidden="true"></i>
     </header>
     <section id="sidebar">
@@ -38,20 +36,56 @@
                 <label> Promotions </label>
             </div>
         </div>
-        <table class="emails-table">
+        <table class="emails-table" id="emails-table">
             <thead>                
             </thead>
             <tbody>
-                <tr read>
+                <tr unread data-email="ClearTax">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> ClearTax </td>
+                    <td> Subject line kal likhte hein </td>
+                    <td> Jun 15 </td>
+                </tr>
+                <tr unread data-email="ClearIncomeTax">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> ClearIncomeTax </td>
+                    <td> Subject line kal likhte hein </td>
+                    <td> Jun 15 </td>
+                </tr>
+                <tr unread data-email="ClearTax">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> ClearTax </td>
+                    <td> Subject line kal likhte hein </td>
+                    <td> Jun 15 </td>
+                </tr>
+                <tr unread data-email="ClearTax">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> ClearTax </td>
+                    <td> Subject line kal likhte hein </td>
+                    <td> Jun 15 </td>
+                </tr>
+                <tr read data-email="Tushar@Hackerearch ">
                     <td>
                         <input type="checkbox" class="selection selection-checkbox" id="1" />
                         <i class="fa fa-star-o selection " aria-hidden="true"></i>
                     </td>
-                    <td> Tushar @ Hackerearch </td>
+                    <td> Tushar@Hackerearch </td>
                     <td> Equinix wants Senior Software Developer; 3+ Years </td>
                     <td> 5:06 PM </td>
                 </tr>
-                <tr read>
+                <tr read data-email="Business Insider via">
                     <td>
                         <input type="checkbox" id="1" />
                         <i class="fa fa-star-o" aria-hidden="true"></i>
@@ -60,7 +94,7 @@
                     <td> Take a hike </td>
                     <td> 5:04 PM </td>
                 </tr>
-                <tr unread>
+                <tr unread data-email="ClearTax">
                     <td>
                         <input type="checkbox" id="1" />
                         <i class="fa fa-star-o" aria-hidden="true"></i>
@@ -68,6 +102,78 @@
                     <td> ClearTax </td>
                     <td> Subject line kal likhte hein </td>
                     <td> Jun 15 </td>
+                </tr>
+                <tr read data-email="Tushar@Hackerearch">
+                    <td>
+                        <input type="checkbox" class="selection selection-checkbox" id="1" />
+                        <i class="fa fa-star-o selection " aria-hidden="true"></i>
+                    </td>
+                    <td> Tushar@Hackerearch </td>
+                    <td> Equinix wants Senior Software Developer; 3+ Years </td>
+                    <td> 5:06 PM </td>
+                </tr>
+                <tr read data-email="Business Insider via">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> Business Insider via </td>
+                    <td> Take a hike </td>
+                    <td> 5:04 PM </td>
+                </tr>
+                <tr read data-email="Tushar@Hackerearch">
+                    <td>
+                        <input type="checkbox" class="selection selection-checkbox" id="1" />
+                        <i class="fa fa-star-o selection " aria-hidden="true"></i>
+                    </td>
+                    <td> Tushar@Hackerearch </td>
+                    <td> Equinix wants Senior Software Developer; 3+ Years </td>
+                    <td> 5:06 PM </td>
+                </tr>
+                <tr read data-email="Business Insider via">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> Business Insider via </td>
+                    <td> Take a hike </td>
+                    <td> 5:04 PM </td>
+                </tr>
+                <tr read data-email="Tushar@Hackerearch">
+                    <td>
+                        <input type="checkbox" class="selection selection-checkbox" id="1" />
+                        <i class="fa fa-star-o selection " aria-hidden="true"></i>
+                    </td>
+                    <td> Tushar@Hackerearch </td>
+                    <td> Equinix wants Senior Software Developer; 3+ Years </td>
+                    <td> 5:06 PM </td>
+                </tr>
+                <tr read data-email="Business Insider via">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> Business Insider via </td>
+                    <td> Take a hike </td>
+                    <td> 5:04 PM </td>
+                </tr>
+                <tr read data-email="Tushar@Hackerearch">
+                    <td>
+                        <input type="checkbox" class="selection selection-checkbox" id="1" />
+                        <i class="fa fa-star-o selection " aria-hidden="true"></i>
+                    </td>
+                    <td> Tushar@Hackerearch </td>
+                    <td> Equinix wants Senior Software Developer; 3+ Years </td>
+                    <td> 5:06 PM </td>
+                </tr>
+                <tr read data-email="Business Insider via">
+                    <td>
+                        <input type="checkbox" id="1" />
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </td>
+                    <td> Business Insider via </td>
+                    <td> Take a hike </td>
+                    <td> 5:04 PM </td>
                 </tr>
             </tbody>
         </table>
