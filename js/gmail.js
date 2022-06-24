@@ -5,8 +5,7 @@ function filterEmails(event){
         window.location.reload();    
 
     const tableRows = document.getElementsByTagName("tr");
-
-    console.log(tableRows.item, typeof tableRows)
+    
     if(tableRows) {
 
         for(let i=0; i<tableRows.length; i++){            
