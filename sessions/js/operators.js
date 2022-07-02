@@ -39,7 +39,7 @@ if(d < c) console.log(`${d} < ${c} True`);
 
 var e = 100;
 var d = 100;
-if(e > d) console.log('True');
+if(!(e > d)) console.log('True');
 if(e >= d) console.log(`${e} >= ${d} - True`)
 if(e <= d) console.log(`${e} <= ${d} - True`)
 
@@ -63,3 +63,14 @@ if (userAge > 18 || userAge < 60) {
 // T && F = Flase
 // F && T = False
 // T && T = True
+
+if(!(a === b)) console.log("********************", "True")
+else console.log("*********************", "False")
+
+if(a !== b) console.log("********************", "True")
+
+var learning = "JS";
+if( !(learning === "HTML" || learning === "CSS" || learning === "Node.JS" || learning === "SQL")){
+    console.log("Big If")
+}
+
