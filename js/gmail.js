@@ -1,5 +1,5 @@
 function filterEmails(event){
-    const filterText = event.target.value.toLowerCase();
+    const filterText = event.target.value.toLowerCase();    
     
     if(!filterText || filterText.trim() === '')
         window.location.reload();    
