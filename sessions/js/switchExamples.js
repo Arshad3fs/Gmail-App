@@ -1,21 +1,63 @@
 // Issues with large set of else if blocks
-var age = 100;
+var rank = 90;
 
-if(age < 1){
-    console.log("Toddler");
-} else if(age < 5) {
-    console.log("Kid");
-} else if(age < 18 ) {
-    console.log("Minor");
-} else if(age < 30) {
-    console.log("Young")
-} else if( age < 40 ) {
-    console.log("Getting Old");
-} else if(age < 60) {
-    console.log("Senior citizen")
-} else if(age < 80 ) {
-    console.log("Too old")
+console.time('If - Else');
+if (rank < 1) {
+    console.log(rank);
+} else if (rank < 2) {
+    console.log(rank);
+} else if (rank < 3) {
+    console.log(rank);
+} else if (rank < 4) {
+    console.log(rank);
+} else if (rank < 5) {
+    console.log(rank);
+} else if (rank < 6) {
+    console.log(rank);
+} else if (rank < 7) {
+    console.log(rank);
+} else if (rank < 8) {
+    console.log(rank);
+} else if (rank < 9) {
+    console.log(rank);
 } else {
-    console.log("No more");
+    console.log(rank);
 }
+console.timeEnd("If - Else")
 
+console.time('Switch Statement')
+switch (rank) {
+    case 1:
+        console.log(rank);
+        break;
+    case 2:
+        console.log(rank);
+        break;
+    case 3:
+        console.log(rank);
+        break;
+    case 4:
+        console.log(rank);
+        break;
+    case 5:
+        console.log(rank);
+        break;
+    case 6:
+        console.log(rank);
+        break;
+    case 7:
+        console.log(rank);
+        break;
+    case 8:
+        console.log(rank);
+        break;
+    case 9:
+        console.log(rank);
+        break;
+    case 10:
+        console.log(rank);
+        break;
+    default:
+        console.log(rank)
+}
+console.timeEnd('Switch Statement')

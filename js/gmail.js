@@ -1,6 +1,6 @@
 function filterEmails(event){
     const filterText = event.target.value.toLowerCase();    
-    
+    console.log(event.target)
     if(!filterText || filterText.trim() === '')
         window.location.reload();    
 
@@ -17,4 +17,8 @@ function filterEmails(event){
             }
         }        
     }
+}
+
+function moreFilters() {
+    document.createElement('section')
 }

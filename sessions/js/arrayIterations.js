@@ -57,3 +57,9 @@ console.log(JSON.stringify(laptops));
 // console.log(JSON.stringify(bikes));
 // let bikes = [ "HD" ];
 // console.log(JSON.stringify(laptops));
+
+
+// Array(Employees) - [ "Imran", "Arshad", "Shahinsha" ];
+            //              0        1          2
+
+// Object(Session) - { timing: '7:15PM', startedOn: 'March-2022', targetEndDate: '15th October' }

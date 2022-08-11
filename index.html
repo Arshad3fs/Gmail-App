@@ -10,14 +10,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="js/gmail.js"> </script>
-    <script src="sessions/js/switchExamples.js"> </script>
+    <script src="sessions/js/scopes.js"> </script>
 </head>
 
 <body>
     <header id="header" class="header-container">
         <i class="fa fa-search fa-lg icon search-icon" aria-hidden="true"></i>
         <input type="text" class="search-bar" id="search-bar" placeholder="Search mail" onkeyup="filterEmails(event)"/>
-        <i class="fa fa-filter fa-lg icon filter-icon" aria-hidden="true"></i>
+        <i class="fa fa-filter fa-lg icon filter-icon" aria-hidden="true" onclick="moreFilters()"></i>
     </header>
     <section id="sidebar">
 
