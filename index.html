@@ -16,7 +16,9 @@
 <body>
     <header id="header" class="header-container">
         <i class="fa fa-search fa-lg icon search-icon" aria-hidden="true"></i>
-        <input type="text" class="search-bar" id="search-bar" placeholder="Search mail" onkeyup="filterEmails(event)"/>
+        <div id="search-container">
+            <input type="text" class="search-bar" id="search-bar" placeholder="Search mail" onkeyup="filterEmails(event)"/>            
+        </div>
         <i class="fa fa-filter fa-lg icon filter-icon" aria-hidden="true" onclick="moreFilters()"></i>
     </header>
     <section id="sidebar">
