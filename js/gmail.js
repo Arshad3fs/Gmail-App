@@ -4,18 +4,21 @@ function filterEmails(event){
     if(!filterText || filterText.trim() === '')
         window.location.reload();    
 
-    const tableRows = document.getElementsByTagName("tr");
-    
-    if(tableRows) {
+    applyFilter(filterText);
+}
 
-        for(let i=0; i<tableRows.length; i++){            
+function applyFilter(filterText) {
+    const tableRows = document.getElementsByTagName("tr");
+
+    if (tableRows) {
+        for (let i = 0; i < tableRows.length; i++) {
             const tableRow = tableRows[i];
-            if(!tableRow.getAttribute("data-email").toLowerCase().startsWith(filterText)){
+            if (!tableRow.getAttribute("data-email").toLowerCase().startsWith(filterText)) {
                 tableRow.style.display = "none";
             } else {
                 tableRow.style.display = "block";
             }
-        }        
+        }
     }
 }
 
@@ -24,18 +27,33 @@ function moreFilters() {
     if(expPanel){
        expPanel.remove();
     } else {
-        const divContainerEl = document.createElement('div');
-        divContainerEl.className = "expansion-panel";
+        const expansionPanel = document.createElement('div');
+        expansionPanel.className = "expansion-panel";
 
-        addField('From', divContainerEl);
-        addField('To', divContainerEl);
-        addField('Subject', divContainerEl);
+        addField('From', expansionPanel);
+        addField('To', expansionPanel);
+        addField('Subject', expansionPanel);
 
-        document.getElementById('search-container').appendChild(divContainerEl);
+        const footer = document.createElement('div');
+        footer.className = 'panel-footer';
+
+        const button = document.createElement('button');
+        button.className = 'action-button';
+        button.innerHTML = 'Search';
+        button.addEventListener('click', function(){
+            const from = document.querySelector('#From');
+            applyFilter(from.value);
+            moreFilters();
+        });
+        footer.appendChild(button);
+
+        expansionPanel.appendChild(footer);
+        document.getElementById('search-container').appendChild(expansionPanel);
+
     }
 }
 
-function addField(label, divContainerEl){
+function addField(label, expansionPanel){
     const container = document.createElement('div');
     container.className = 'row';
 
@@ -46,8 +64,9 @@ function addField(label, divContainerEl){
     const input = document.createElement('input');
     input.type = 'text';
     input.className = 'input-field';
+    input.id = label;
 
     container.appendChild(labelEl);
     container.appendChild(input);
-    divContainerEl.appendChild(container);
+    expansionPanel.appendChild(container);
 }

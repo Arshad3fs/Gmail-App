@@ -20,7 +20,7 @@ body {
   position: relative;
 }
 
-.search-bar {  
+.search-bar {
   width: 90%;
   padding: 15px 50px;
   outline: none;
@@ -116,24 +116,48 @@ body {
 }
 
 .expansion-panel {
+  font-size: 14px;
   height: 300px;
   width: 100%;
   border: 2px solid #eee;
-  position: absolute;  
+  position: absolute;
   background-color: white;
   padding: 20px;
 }
+
 .row {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
+
 .label {
   width: 30%;
   color: #5f6368;
 }
-.input-field, .input-field:focus {
+
+.input-field,
+.input-field:focus {
   width: 70%;
   border: none;
   border-bottom: 1px solid #c2cad4;
   outline: none;
+}
+
+.panel-footer {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: end;
+  width: 90%;
+}
+
+.action-button {
+  background-color: #1a73e8;
+  padding: 10px 0;
+  width: 100px;
+  border: 1px solid #1a73e8;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
