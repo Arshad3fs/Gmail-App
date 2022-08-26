@@ -1,19 +1,20 @@
+var subject, to, from;
+
 function filterEmails(event){
-    const filterText = event.target.value.toLowerCase();    
-    console.log(event.target)
+    const filterText = event.target.value.toLowerCase();        
     if(!filterText || filterText.trim() === '')
         window.location.reload();    
 
-    applyFilter(filterText);
+    applyFilter(filterText, 'email');
 }
 
-function applyFilter(filterText) {
+function applyFilter(filterText, dataType) {
     const tableRows = document.getElementsByTagName("tr");
 
     if (tableRows) {
         for (let i = 0; i < tableRows.length; i++) {
             const tableRow = tableRows[i];
-            if (!tableRow.getAttribute("data-email").toLowerCase().startsWith(filterText)) {
+            if (!tableRow.getAttribute(`data-${dataType}`).toLowerCase().startsWith(filterText)) {
                 tableRow.style.display = "none";
             } else {
                 tableRow.style.display = "block";
@@ -42,7 +43,11 @@ function moreFilters() {
         button.innerHTML = 'Search';
         button.addEventListener('click', function(){
             const from = document.querySelector('#From');
-            applyFilter(from.value);
+            const subject = document.querySelector('#Subject');
+            if(from.value)
+                applyFilter(from.value.toLowerCase(), 'email');
+            else if(subject.value)
+                applyFilter(subject.value.toLowerCase(), 'subject');
             moreFilters();
         });
         footer.appendChild(button);
